@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // Overview: First I have to declare the function. The Function
+        // name is given in the odinProject. The function is supposed to be a
+        // computer bot. Which will randomly pick between rock, paper, scissors. 
+        // the picked item should return as a string value.
+        
+
+        // Declare the function 
+        function getComputerChoice(){
+            // create 3 variables rock, paper , scissors
+            // Assign string values to the variable
+            const rock = "Rock";
+            const paper = "Paper";
+            const scissor = "Scissor";
+
+            // use math random to randomly select 0 to 2
+            let randomSelect = Math.floor(Math.random() * 3)
+
+            // IF 0 then return variable rock
+            if (randomSelect === 0) {
+                console.log(rock);
+                return rock;
+            } 
+            // IF 1 then return variable paper
+            else if (randomSelect === 1) {
+                console.log(paper);
+                return paper;
+            } 
+            // IF 2 then console.log variable scissors       
+            else{
+                console.log(scissor);
+                return scissor;
+            }
+            
+        }
+
+        getComputerChoice();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
