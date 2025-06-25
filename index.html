@@ -46,10 +46,6 @@
             
         }
 
-        console.log("Computer Choice is: "+getComputerChoice());
-
-
-
         //  Overview: Since the game will be played by the player. I have to
         // write a function that takes input from the player and returns it.
 
@@ -58,7 +54,7 @@
         function getHumanChoice() {
 
             // declare input variable
-             let playerChoice = prompt("Choese one Rock, Paper or Scissor");
+             let playerChoice = prompt("choose one Rock, Paper or Scissor");
             
             // assign the input to the input variable
 
@@ -81,32 +77,36 @@
              computerChoice = computerChoice.toLowerCase();
 
             // IF player select rock: Then
-            if (humanChoice === "rock"){
-                if (computerChoice === "rock"){
+            if (humanChoice == "rock"){
+                if (computerChoice == "rock"){
                     console.log("The game is draw");
-                } else if (computerChoice === "paper"){
+                } else if (computerChoice == "paper"){
                     console.log("You Lose");
-                } else if (computerChoice === "scissor"){
+                } else if (computerChoice == "scissor"){
                     console.log("You Win!");
                 } else{
                     console.log("Didn't select right option");
                 }
-            } else if (humanChoice === "paper"){
-                if (computerChoice === "paper"){
+            } else if (humanChoice == "paper"){
+                if (computerChoice == "paper"){
                     console.log("The game is draw");
-                } else if (computerChoice === "scissor"){
+                } else if (computerChoice == "scissor"){
                     console.log("You Lose");
-                } else if (computerChoice === "rock"){
+                } else if (computerChoice == "rock"){
                     console.log("You win");
+                } else{
+                    console.log("Didn't select right option");
                 }
                 
-            } else if (humanChoice === "scissor"){
-                if (computerChoice === "scissor"){
+            } else if (humanChoice == "scissor"){
+                if (computerChoice == "scissor"){
                     console.log("The game is draw");
-                } else if (computerChoice === "rock"){
+                } else if (computerChoice == "rock"){
                     console.log("You Lose");
-                } else if (computerChoice === "paper"){
+                } else if (computerChoice == "paper"){
                     console.log("You win");
+                } else{
+                    console.log("Didn't select right option");
                 }
             } else{
                 console.log("Error");
@@ -116,6 +116,8 @@
 
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice();
+
+        console.log("Computer Choice is: "+ computerSelection);
 
         playRound(humanSelection, computerSelection);
 
