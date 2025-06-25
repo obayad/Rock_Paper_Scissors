@@ -8,6 +8,12 @@
 <body>
     <script>
 
+        // Global variablesL?
+
+        let humanScore = 0;
+        let computerScore = 0;
+
+
         // Overview: First I have to declare the function. The Function
         // name is given in the odinProject. The function is supposed to be a
         // computer bot. Which will randomly pick between rock, paper, scissors. 
@@ -40,7 +46,7 @@
             
         }
 
-        console.log(getComputerChoice());
+        console.log("Computer Choice is: "+getComputerChoice());
 
 
 
@@ -61,12 +67,57 @@
 
         }
 
-        console.log(getHumanChoice());
 
 
 
+        // both functions returns but the game isnt playable yet. I have to take the
+        // both str and compare them to to assume who won. And set the score. For that --
 
+        // Declare the play function with two parameters 
+        function playRound(humanChoice, computerChoice){
 
+            // make the parameter case insetive
+             humanChoice = humanChoice.toLowerCase();
+             computerChoice = computerChoice.toLowerCase();
+
+            // IF player select rock: Then
+            if (humanChoice === "rock"){
+                if (computerChoice === "rock"){
+                    console.log("The game is draw");
+                } else if (computerChoice === "paper"){
+                    console.log("You Lose");
+                } else if (computerChoice === "scissor"){
+                    console.log("You Win!");
+                } else{
+                    console.log("Didn't select right option");
+                }
+            } else if (humanChoice === "paper"){
+                if (computerChoice === "paper"){
+                    console.log("The game is draw");
+                } else if (computerChoice === "scissor"){
+                    console.log("You Lose");
+                } else if (computerChoice === "rock"){
+                    console.log("You win");
+                }
+                
+            } else if (humanChoice === "scissor"){
+                if (computerChoice === "scissor"){
+                    console.log("The game is draw");
+                } else if (computerChoice === "rock"){
+                    console.log("You Lose");
+                } else if (computerChoice === "paper"){
+                    console.log("You win");
+                }
+            } else{
+                console.log("Error");
+            }
+        }
+   
+
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+
+        playRound(humanSelection, computerSelection);
 
 
 
