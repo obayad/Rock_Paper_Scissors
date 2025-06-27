@@ -66,13 +66,13 @@
 
 
 
-        // both functions returns but the game isnt playable yet. I have to take the
+        // both functions returns but the game isn't playable yet. I have to take the
         // both str and compare them to to assume who won. And set the score. For that --
 
         // Declare the play function with two parameters 
         function playRound(humanChoice, computerChoice){
 
-            // make the parameter case insetive
+            // make the parameter case insensitive
              humanChoice = humanChoice.toLowerCase();
              computerChoice = computerChoice.toLowerCase();
 
@@ -80,20 +80,30 @@
             if (humanChoice == "rock"){
                 if (computerChoice == "rock"){
                     console.log("The game is draw");
+                    console.log("player: " + humanScore + " " + "computer: " + computerScore);
                 } else if (computerChoice == "paper"){
                     console.log("You Lose");
+                    computerScore++;
+                    console.log("player: " + humanScore + " " + "computer: " + computerScore);
                 } else if (computerChoice == "scissor"){
                     console.log("You Win!");
+                    humanScore++;
+                    console.log("player: " + humanScore + " " + "computer: " + computerScore);
                 } else{
                     console.log("Didn't select right option");
                 }
             } else if (humanChoice == "paper"){
                 if (computerChoice == "paper"){
                     console.log("The game is draw");
+                    console.log("player: " + humanScore + " " + "computer: " + computerScore);
                 } else if (computerChoice == "scissor"){
                     console.log("You Lose");
+                    computerScore++;
+                    console.log("player: " + humanScore + " " + "computer: " + computerScore);
                 } else if (computerChoice == "rock"){
                     console.log("You win");
+                    humanScore++;
+                    console.log("player: " + humanScore + " " + "computer: " + computerScore);
                 } else{
                     console.log("Didn't select right option");
                 }
@@ -101,48 +111,48 @@
             } else if (humanChoice == "scissor"){
                 if (computerChoice == "scissor"){
                     console.log("The game is draw");
+                    console.log("player: " + humanScore + " " + "computer: " + computerScore);
                 } else if (computerChoice == "rock"){
                     console.log("You Lose");
+                    computerScore++;
+                    console.log("player: " + humanScore + " " + "computer: " + computerScore);
                 } else if (computerChoice == "paper"){
                     console.log("You win");
+                    humanScore++;
+                    console.log("player: " + humanScore + " " + "computer: " + computerScore);
                 } else{
                     console.log("Didn't select right option");
                 }
             } else{
                 console.log("Error");
             }
+
+
+
         }
    
-
-        const humanSelection = getHumanChoice();
-        const computerSelection = getComputerChoice();
-
-        console.log("Computer Choice is: "+ computerSelection);
-
-        playRound(humanSelection, computerSelection);
+        // My next job is to make the playRound function run 5 times. while keep storing the score
+        // in each round. 
 
 
 
+        function playGame(){
 
+            let i = 0;
+            while (i<5) {
 
+                let humanSelection = getHumanChoice();
+                let computerSelection = getComputerChoice();
 
+                console.log("Computer Choice is: "+ computerSelection);
+                
+                playRound(humanSelection, computerSelection);
 
+                i++;
+            }
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        playGame()
 
     </script>
 </body>
